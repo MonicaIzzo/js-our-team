@@ -37,8 +37,15 @@ const teamMembers = [
     { name: 'Barbara Ramos', role: 'Graphic Designer', image: 'barbara-ramos-graphic-designer.jpg',},
 ]
 
-// MILESTONE 1: STAMPO IN CANSOLE l'OBJECT
+console.log(teamMembers);
 
+// MILESTONE 1: STAMPO IN CANSOLE l'OBJECT
+for (let i = 0; i < teamMembers.length; i++) {
+    const member = teamMembers[i];
+    items += `
+    <li>${member.name}
+    `
+}
 
 // MILESTONE 2: STAMPO IN DOM l'OBJECT
 
