@@ -10,7 +10,6 @@ BONUS 1:
 Trasformare la stringa foto in una immagine effettiva
 BONUS 2:
 Organizzare i singoli membri in card/schede ispirandovi alle immagini in allegato
-Consigli del giorno:
 
 DATI
 Wayne Barnett |	Founder & CEO        |	wayne-barnett-founder-ceo.jpg
@@ -23,7 +22,32 @@ Barbara Ramos |	Graphic Designer     |	barbara-ramos-graphic-designer.jpg */
 console.log('JS OK')
 
 // #0 RECUPERO GLI ELEMENTI DAL DOM
-// #1 CREO l'ARREY "Team"
-// #2 STAMPO IN CANSOLE l'Arrey cosi creato
-// #3 INSERISCO IN PAGINA i DATI testuali
-// #4 RENDO LA FOTO CARICATA DINAMICAMENTE
+const imgElement = document.getElementById('imagesThumbnails');
+const nameSurnameElement = document.getElementById('nameSurname');
+const roleElement = document.getElementById('professionalRole');
+
+// # MILESTONE 0: CREO l'OBJECT "Team"
+
+const teamMembers = [
+    { name: 'Wayne Barnett', role: 'Founder & CEO', image: 'wayne-barnett-founder-ceo.jpg',},
+    { name: 'Angela Caroll', role: 'Chief Editor ', image: 'angela-caroll-chief-editor.jpg',},
+    { name: 'Walter Gordon', role: 'Office Manager ', image: 'walter-gordon-office-manager.jpg',},
+    { name: 'Angela Lopez ', role: 'Social Media Manager', image: 'angela-lopez-social-media-manager.jpg',},
+    { name: 'Scott Estrada ', role: 'Developer', image: 'scott-estrada-developer.jpg',},
+    { name: 'Barbara Ramos', role: 'Graphic Designer', image: 'barbara-ramos-graphic-designer.jpg',},
+]
+
+// MILESTONE 1: STAMPO IN CANSOLE l'OBJECT
+
+
+// MILESTONE 2: STAMPO IN DOM l'OBJECT
+
+// #3 INSERISCO IN PAGINA i DATI testuali e LA FOTO CARICATA DINAMICAMENTE
+imgElement.innerText = [];
+nameSurnameElement.innerText = [];
+roleElement.innerText = [];
+
+
+// BONUS 1: Trasformare la stringa foto in una immagine effettiva
+
+// BONUS 2: Organizzare i singoli membri in card/schede
