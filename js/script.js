@@ -21,40 +21,39 @@ Barbara Ramos |	Graphic Designer     |	barbara-ramos-graphic-designer.jpg */
 
 console.log('JS OK')
 
-// #0 RECUPERO GLI ELEMENTI DAL DOM
-const imgElement = document.getElementById('imagesThumbnails');
-const nameSurnameElement = document.getElementById('nameSurname');
-const roleElement = document.getElementById('professionalRole');
-
-// # MILESTONE 0: CREO l'OBJECT "Team"
+// # MILESTONE 0 e 1: CREO l'ARREY "Team" e STAMPO IN CANSOLE.
 
 const teamMembers = [
-    { name: 'Wayne Barnett', role: 'Founder & CEO', image: 'wayne-barnett-founder-ceo.jpg',},
-    { name: 'Angela Caroll', role: 'Chief Editor ', image: 'angela-caroll-chief-editor.jpg',},
-    { name: 'Walter Gordon', role: 'Office Manager ', image: 'walter-gordon-office-manager.jpg',},
-    { name: 'Angela Lopez ', role: 'Social Media Manager', image: 'angela-lopez-social-media-manager.jpg',},
-    { name: 'Scott Estrada ', role: 'Developer', image: 'scott-estrada-developer.jpg',},
-    { name: 'Barbara Ramos', role: 'Graphic Designer', image: 'barbara-ramos-graphic-designer.jpg',},
+    {name: 'Wayne Barnett', role: 'Founder & CEO', image: 'wayne-barnett-founder-ceo.jpg',},
+    {name: 'Angela Caroll', role: 'Chief Editor ', image: 'angela-caroll-chief-editor.jpg',},
+    {name: 'Walter Gordon', role: 'Office Manager ', image: 'walter-gordon-office-manager.jpg',},
+    {name: 'Angela Lopez ', role: 'Social Media Manager', image: 'angela-lopez-social-media-manager.jpg',},
+    {name: 'Scott Estrada ', role: 'Developer', image: 'scott-estrada-developer.jpg',},
+    {name: 'Barbara Ramos', role: 'Graphic Designer', image: 'barbara-ramos-graphic-designer.jpg',},
 ]
-
 console.log(teamMembers);
 
-// MILESTONE 1: STAMPO IN CANSOLE l'OBJECT
-for (let i = 0; i < teamMembers.length; i++) {
-    const member = teamMembers[i];
-    items += `
-    <li>${member.name}
-    `
+
+// MILESTONE 2 e 3 : STAMPO IN DOM l'ARRAY con i DATI testuali e LA FOTO CARICATA DINAMICAMENTE.
+
+const teamContainer = document.getElementById('team-container');
+
+// card
+
+let cards ='';
+
+for (const member of teamMembers) {
+    const card = `
+    <div class="col-4 mt-3 mb-3">
+        <div class="card mb-3 border border-0 rounded-0">
+            <img class="card-img-top rounded-0" src="img/${member.image}" alt=“pippo”>
+            <div class="card-body">
+                <h5 class="card-title">${member.name}</h5>
+                    <p class=" card-text">${member.role}</p>
+            </div>
+        </div>
+    </div>
+    `;
+    cards += card;
 }
-
-// MILESTONE 2: STAMPO IN DOM l'OBJECT
-
-// #3 INSERISCO IN PAGINA i DATI testuali e LA FOTO CARICATA DINAMICAMENTE
-imgElement.innerText = [];
-nameSurnameElement.innerText = [];
-roleElement.innerText = [];
-
-
-// BONUS 1: Trasformare la stringa foto in una immagine effettiva
-
-// BONUS 2: Organizzare i singoli membri in card/schede
+teamContainer.innerHTML = cards;
