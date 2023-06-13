@@ -11,10 +11,7 @@ Trasformare la stringa foto in una immagine effettiva
 BONUS 2:
 Organizzare i singoli membri in card/schede ispirandovi alle immagini in allegato
 Consigli del giorno:
-Ragioniamo come sempre a step.
-Prima la logica in italiano e poi traduciamo in codice.
-E ricordiamoci che console.log() è nostro amico!
-Buon lavoro!
+
 DATI
 Wayne Barnett |	Founder & CEO        |	wayne-barnett-founder-ceo.jpg
 Angela Caroll |	Chief Editor         |	angela-caroll-chief-editor.jpg
@@ -25,8 +22,8 @@ Barbara Ramos |	Graphic Designer     |	barbara-ramos-graphic-designer.jpg */
 
 console.log('JS OK')
 
-// #0
-// #1
-// #2
-// #3
-// #4
+// #0 RECUPERO GLI ELEMENTI DAL DOM
+// #1 CREO l'ARREY "Team"
+// #2 STAMPO IN CANSOLE l'Arrey cosi creato
+// #3 INSERISCO IN PAGINA i DATI testuali
+// #4 RENDO LA FOTO CARICATA DINAMICAMENTE
