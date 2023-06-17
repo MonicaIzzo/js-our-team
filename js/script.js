@@ -30,9 +30,13 @@ const teamMembers = [
     {name: 'Angela Lopez ', role: 'Social Media Manager', image: 'angela-lopez-social-media-manager.jpg',},
     {name: 'Scott Estrada ', role: 'Developer', image: 'scott-estrada-developer.jpg',},
     {name: 'Barbara Ramos', role: 'Graphic Designer', image: 'barbara-ramos-graphic-designer.jpg',},
-]
+];
 console.log(teamMembers);
 
+for (let i = 0; i < teamMembers.length; i++) {
+    const member = teamMembers[i];
+    console.log(member.name, member.role, member.image);
+}
 
 // MILESTONE 2 e 3 : STAMPO IN DOM l'ARRAY con i DATI testuali e LA FOTO CARICATA DINAMICAMENTE.
 
