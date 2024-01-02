@@ -21,6 +21,23 @@ Barbara Ramos |	Graphic Designer     |	barbara-ramos-graphic-designer.jpg */
 
 console.log('JS OK')
 
+// FUNZIONE
+const createMemberCard = (member) => {
+    const card = `
+    <div class="col-4 mt-3 mb-3">
+        <div class="card mb-3 border border-0 rounded-0">
+            <img class="card-img-top rounded-0" src="img/${member.image}" alt=“${member.name}”>
+            <div class="card-body">
+                <h5 class="card-title">${member.name}</h5>
+                    <p class=" card-text">${member.role}</p>
+            </div>
+        </div>
+    </div>
+    `;
+    return card;
+}
+
+
 // # MILESTONE 0 e 1: CREO l'ARREY "Team" e STAMPO IN CANSOLE.
 
 const teamMembers = [
@@ -33,6 +50,7 @@ const teamMembers = [
 ];
 console.log(teamMembers);
 
+
 for (let i = 0; i < teamMembers.length; i++) {
     const member = teamMembers[i];
     console.log(member.name, member.role, member.image);
@@ -41,6 +59,10 @@ for (let i = 0; i < teamMembers.length; i++) {
 // MILESTONE 2 e 3 : STAMPO IN DOM l'ARRAY con i DATI testuali e LA FOTO CARICATA DINAMICAMENTE.
 
 const teamContainer = document.getElementById('team-container');
+const form = document.getElementById('members-form');
+const nameField = document.getElementById('name');
+const roleField = document.getElementById('role');
+const imageField = document.getElementById('image');
 
 // card
 
@@ -61,3 +83,33 @@ for (const member of teamMembers) {
     cards += card;
 }
 teamContainer.innerHTML = cards;
+
+
+// Metto in ascolto il submit del form
+form.addEventListener('submit', event => {
+    // blocco l'invio del form
+    event.preventDefault();
+
+    // recupero i valori degli input
+    const name = nameField.value.trim();
+    const role = roleField.value.trim();
+    const image = imageField.value.trim();
+
+    // Validazione
+    if(!name || !role || !role) {
+        alert('tutti i camoi sono obbligatori');
+        return;
+    }
+
+    // Creo un oggetto per il nuovo membro
+    const newMember = {name: name, role: role, image: image};
+
+    teamMembers.push('newMember');
+
+    // renderTeam();
+  const card = createMemberCard(newMember);
+    teamContainer.innerHTML += card;
+
+    // Svuoto il form
+    form.reset();
+});

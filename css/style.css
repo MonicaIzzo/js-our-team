@@ -16,3 +16,25 @@
 .debug {
     border: 2px dotted red;
 }
+
+/********************************************
+    LAYOUT
+********************************************/
+
+
+body {
+    background-color: #dddbd5;
+}
+
+.card {
+    object-fit: contain;
+    transition: transform 1s;
+}
+
+.card:hover {
+    object-fit: contain;
+    transform: scale(1.1);
+    box-shadow: 5px 5px 5px #918a76;
+
+
+}
